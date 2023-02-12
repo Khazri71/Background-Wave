@@ -1,0 +1,92 @@
+/*Font*/
+@import url("https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap");
+
+/*Variables*/
+:root {
+  --main-color-one: #ccc;
+  --main-color-two: #fff;
+  --main-color-three: #0000eb;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--main-color-one);
+  font-family: "Tenor Sans", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+}
+
+.container .cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container .cards .card-1,
+.container .cards .card-2 {
+  padding: 15px;
+  height: 250px;
+  border-radius: 15px;
+  margin-right: 20px;
+}
+.container .cards .card-1 {
+  width: 200px;
+  background-color: var(--main-color-two);
+}
+.container .cards .card-1 p,
+.container .cards .card-2 p {
+  height: 150px;
+  background-color: var(--main-color-one);
+  padding: 10px;
+  border-radius: 15px;
+}
+.container .cards .card-1 button {
+  border: none;
+  padding: 12px 0;
+  background-color: var(--main-color-three);
+  color: var(--main-color-two);
+  text-align: center;
+  width: 170px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.container .cards .card-2 {
+  width: 400px;
+  background-color: var(--main-color-two);
+}
+
+.container .cards .card-2 h2 {
+  text-align: center;
+}
+
+.container::before {
+  position: absolute;
+  content: "";
+  width: 1000px;
+  height: 1000px;
+  background-color: var(--main-color-three);
+  z-index: -1;
+  top: -40px;
+  right: -150px;
+  border-radius: 100%;
+  transform: skew(245deg, 347deg);
+  animation: moving 3s ease-in-out infinite alternate;
+}
+
+/*Animation*/
+@keyframes moving {
+  from {
+    transform: skew(245deg, 347deg);
+  }
+  to {
+    transform: skew(245deg, 344deg);
+  }
+}
